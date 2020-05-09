@@ -5,7 +5,6 @@ namespace VitorHugoRo\StockTile;
 use Illuminate\Support\ServiceProvider;
 use Livewire\Livewire;
 use VitorHugoRo\StockTile\Commands\FetchStockDataCommand;
-use VitorHugoRo\StockTile\StockTileComponent;
 
 class StockServiceProvider extends ServiceProvider
 {

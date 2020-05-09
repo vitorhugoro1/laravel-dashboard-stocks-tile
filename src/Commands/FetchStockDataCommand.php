@@ -2,9 +2,9 @@
 
 namespace VitorHugoRo\StockTile\Commands;
 
+use Illuminate\Console\Command;
 use VitorHugoRo\StockTile\StockStore;
 use VitorHugoRo\StockTile\YahooFinanceApi;
-use Illuminate\Console\Command;
 
 class FetchStockDataCommand extends Command
 {
@@ -20,7 +20,7 @@ class FetchStockDataCommand extends Command
         foreach (config('dashboard.tiles.stocks_data.stocks') ?? [] as $stock) {
             $stockQuote = $yahooFinanceApi->getQuote($stock);
 
-            if (!$stockQuote) {
+            if (! $stockQuote) {
                 continue;
             }
 

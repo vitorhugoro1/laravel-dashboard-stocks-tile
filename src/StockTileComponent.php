@@ -2,7 +2,6 @@
 
 namespace VitorHugoRo\StockTile;
 
-use VitorHugoRo\StockTile\StockStore;
 use Livewire\Component;
 
 class StockTileComponent extends Component

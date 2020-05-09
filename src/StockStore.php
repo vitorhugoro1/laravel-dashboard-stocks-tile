@@ -2,9 +2,9 @@
 
 namespace VitorHugoRo\StockTile;
 
-use Spatie\Dashboard\Models\Tile;
-use Illuminate\Support\Collection;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Collection;
+use Spatie\Dashboard\Models\Tile;
 
 class StockStore
 {

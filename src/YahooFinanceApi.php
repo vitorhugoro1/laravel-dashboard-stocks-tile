@@ -24,7 +24,7 @@ class YahooFinanceApi
     {
         $quote = $this->client->getQuote($stock);
 
-        if (!$quote) {
+        if (! $quote) {
             return null;
         }
 
@@ -37,7 +37,7 @@ class YahooFinanceApi
             'dayHigh' => $quote->getRegularMarketDayHigh(),
             'previousClose' => $quote->getRegularMarketPreviousClose(),
             'differenceAmount' => $quote->getRegularMarketChange(),
-            'differencePercent' => $quote->getRegularMarketChangePercent()
+            'differencePercent' => $quote->getRegularMarketChangePercent(),
         ];
     }
 }

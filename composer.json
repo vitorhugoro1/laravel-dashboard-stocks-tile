@@ -1,35 +1,36 @@
 {
-    "name": ":vendor/:package_name",
+    "name": "vitorhugoro1/laravel-dashboard-stocks-tile",
     "description": ":package_description",
     "keywords": [
-        ":vendor",
-        ":package_name"
+        "vitorhugoro1",
+        "laravel-dashboard-stocks-tile"
     ],
-    "homepage": "https://github.com/:vendor/:package_name",
+    "homepage": "https://github.com/vitorhugoro1/laravel-dashboard-stocks-tile",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": ":author_email",
-            "homepage": "https://:vendor.be",
+            "name": "Vitor Hugo Rodrigues Merencio",
+            "email": "vitorhugo.ro10@gmail.com",
+            "homepage": "https://vitorhugoro1.github.io",
             "role": "Developer"
         }
     ],
     "require": {
         "php": "^7.4",
-        ":vendor/laravel-dashboard": "^1.0"
+        "spatie/laravel-dashboard": "^1.0",
+        "scheb/yahoo-finance-api": "^3.1"
     },
     "require-dev": {
         "phpunit/phpunit": "^9.0"
     },
     "autoload": {
         "psr-4": {
-            "Spatie\\MyTile\\": "src"
+            "VitorHugoRo\\StockTile\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Spatie\\MyTile\\Tests\\": "tests"
+            "VitorHugoRo\\StockTile\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -43,7 +44,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Spatie\\MyTile\\MyTileServiceProvider"
+                "VitorHugoRo\\StockTile\\StockServiceProvider"
             ]
         }
     },

@@ -5,7 +5,7 @@
 
 A tile who fetch stock data price information from Yahoo Finance!
 
-This tile can be used on [the Laravel Dashboard]https://docs.spatie.be/laravel-dashboard).
+This tile can be used on [the Laravel Dashboard](https://docs.spatie.be/laravel-dashboard).
 
 ## Installation
 

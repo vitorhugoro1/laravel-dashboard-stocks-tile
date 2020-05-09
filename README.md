@@ -1,10 +1,9 @@
-# A short description of the tile
+# Laravel Dashboard Finance Stocks Tile
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/:vendor/:package_name.svg?style=flat-square)](https://packagist.org/packages/:vendor/:package_name)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/:vendor/:package_name/run-tests?label=tests)](https://github.com/:vendor/:package_name/actions?query=workflow%3Arun-tests+branch%3Amaster)
-[![Total Downloads](https://img.shields.io/packagist/dt/:vendor/:package_name.svg?style=flat-square)](https://packagist.org/packages/:vendor/:package_name)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/vitorhugoro1/laravel-dashboard-stocks-tile.svg?style=flat-square)](https://packagist.org/packages/vitorhugoro1/laravel-dashboard-stocks-tile)
+[![Total Downloads](https://img.shields.io/packagist/dt/vitorhugoro1/laravel-dashboard-stocks-tile.svg?style=flat-square)](https://packagist.org/packages/vitorhugoro1/laravel-dashboard-stocks-tile)
 
-A friendly explanation of what your tile does.
+A tile who fetch stock data price information from Yahoo Finance!
 
 This tile can be used on [the Laravel Dashboard]https://docs.spatie.be/laravel-dashboard).
 
@@ -13,18 +12,44 @@ This tile can be used on [the Laravel Dashboard]https://docs.spatie.be/laravel-d
 You can install the package via composer:
 
 ```bash
-composer require :vendor/:package_name
+composer require vitorhugoro1/laravel-dashboard-stocks-tile
 ```
 
 ## Usage
 
-In your dashboard view you use the `livewire:my-tile` component.
+In the `dashboard` config file, you must add this configuration in the `tiles` key.
+
+```php
+// in config/dashboard.php
+return [
+    // ...
+    'tiles' => [
+        'stocks_data' => [
+            'stocks' => [
+                'AAPL' // Use the yahoo stock symbols format
+            ],
+            'refresh_interval_in_seconds' => 60,
+        ],
+    ],
+];
+```
+
+In app\Console\Kernel.php you should schedule the VitorHugoRo\StockTile\Commands\FetchStockDataCommand to run every minute.
+
+In your dashboard view you use the `livewire:stock-tile` component.
 
 ```html
 <x-dashboard>
-    <livewire:my-tile position="e7:e16" />
+    <livewire:stock-tile position="e7:e16"/>
 </x-dashboard>
 ```
+
+## Todo items
+
+- [ ] Adding custom title to tile component
+- [ ] Make tests to livewire tile
+- [ ] Make tests to data fetch
+- [ ] Make an self Yahoo Finance crawler instead of using third party libs.
 
 ## Testing
 
@@ -42,10 +67,11 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 ## Security
 
-If you discover any security related issues, please email :author_email instead of using the issue tracker.
+If you discover any security related issues, please email vitorhugo.ro10@gmail.com instead of using the issue tracker.
 
 ## Credits
 
+- [Vitor Merencio](https://github.com/vitorhugoro1)
 - [All Contributors](../../contributors)
 
 ## License

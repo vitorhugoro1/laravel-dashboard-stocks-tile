@@ -17,7 +17,7 @@ class StockTileComponent extends Component
 
     public function render()
     {
-        return view('livewire.stock-tile', [
+        return view('dashboard-stock-tile::tile', [
             'stocks' => StockStore::make()->quotes(),
             'refreshIntervalInSeconds' => config('dashboard.tiles.stocks_data.refresh_interval_in_seconds') ?? 60,
         ]);

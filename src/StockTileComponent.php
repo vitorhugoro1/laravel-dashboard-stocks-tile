@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace VitorHugoRo\StockTile;
 
 use Livewire\Component;

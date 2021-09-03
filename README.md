@@ -48,8 +48,7 @@ In your dashboard view you use the `livewire:stock-tile` component.
 
 - [ ] Adding custom title to tile component
 - [ ] Make tests to livewire tile
-- [ ] Make tests to data fetch
-- [ ] Make an self Yahoo Finance crawler instead of using third party libs.
+- [x] Make tests to data fetch
 
 ## Testing
 

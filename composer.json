@@ -7,21 +7,23 @@
     ],
     "homepage": "https://github.com/vitorhugoro1/laravel-dashboard-stocks-tile",
     "license": "MIT",
-    "authors": [
-        {
-            "name": "Vitor Hugo Rodrigues Merencio",
-            "email": "vitorhugo.ro10@gmail.com",
-            "homepage": "https://vitorhugoro1.github.io",
-            "role": "Developer"
-        }
-    ],
+    "authors": [{
+        "name": "Vitor Hugo Rodrigues Merencio",
+        "email": "vitorhugo.ro10@gmail.com",
+        "homepage": "https://vitorhugoro1.github.io",
+        "role": "Developer"
+    }],
     "require": {
-        "php": "^7.4",
-        "spatie/laravel-dashboard": "^2.0",
+        "php": "^8.0",
+        "guzzlehttp/guzzle": "^7.0",
+        "illuminate/support": "^8.58",
         "scheb/yahoo-finance-api": "^4.0",
-        "guzzlehttp/guzzle": "^7.0"
+        "spatie/laravel-dashboard": "^2.0"
     },
     "require-dev": {
+        "livewire/livewire": "^2.5",
+        "nunomaduro/collision": "^5.3",
+        "orchestra/testbench": "^6.20",
         "phpunit/phpunit": "^9.0"
     },
     "autoload": {
@@ -35,8 +37,8 @@
         }
     },
     "scripts": {
-        "test": "vendor/bin/phpunit",
-        "test-coverage": "vendor/bin/phpunit --coverage-html coverage",
+        "test": "vendor/bin/testbench package:test",
+        "test-coverage": "vendor/bin/testbench package:test --coverage-html coverage",
         "format": "vendor/bin/php-cs-fixer fix --allow-risky=yes"
     },
     "config": {

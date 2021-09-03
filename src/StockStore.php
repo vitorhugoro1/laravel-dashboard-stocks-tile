@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace VitorHugoRo\StockTile;
 
 use Illuminate\Support\Arr;
@@ -11,7 +13,7 @@ class StockStore
     /** @var Tile */
     private $tile;
 
-    public static function make()
+    public static function make(): StockStore
     {
         return new static();
     }
@@ -21,7 +23,7 @@ class StockStore
         $this->tile = Tile::firstOrCreateForName('stock_data');
     }
 
-    public function setQuoteDataForStock(array $quotes): self
+    public function setQuoteDataForStock(array $quotes): StockStore
     {
         $this->tile->putData('stocks', $quotes);
 

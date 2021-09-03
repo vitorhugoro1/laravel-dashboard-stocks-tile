@@ -1,30 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
 namespace VitorHugoRo\StockTile;
 
 use Scheb\YahooFinanceApi\ApiClient;
-use Scheb\YahooFinanceApi\ApiClientFactory;
 
 class YahooFinanceApi
 {
-    /** @var ApiClient */
-    private $client;
-
-    public function __construct()
+    public function __construct(private ApiClient $client)
     {
-        $this->client = ApiClientFactory::createApiClient();
     }
 
-    /**
-     * @param string $stock
-     *
-     * @return array|null
-     */
-    public function getQuote(string $stock)
+    public function getQuote(string $stock): ?array
     {
         $quote = $this->client->getQuote($stock);
 
-        if (! $quote) {
+        if (!$quote) {
             return null;
         }
 
